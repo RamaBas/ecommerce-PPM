@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { GetStaticProps } from 'next';
-import { Button, Grid, Link, Stack, Text, Image } from '@chakra-ui/react';
+import { Button, Grid, Link, Stack, Text, Image, Flex } from '@chakra-ui/react';
 
 import { Product } from '../product/types';
 import api from '../product/api'
@@ -33,15 +33,18 @@ export const indexRoute: React.FC<Props> = ({products}) => {
    
 
   return (
-    <Stack>
+    <Stack spacing={6}>
       <Grid gridGap={6} templateColumns="repeat(auto-fill, minmax(240px, 1fr))">
         {products.map(product => 
-          <Stack backgroundColor="gray.100" key={product.id}>
+          <Stack key={product.id} spacing={3} backgroundColor="gray.100" borderRadius="md" padding={4} >
             <Image src={product.image} alt={product.title}></Image>
-            <Text>{product.title}</Text>
-            <Text>{parseCurrency(product.price)}</Text>
-            <Button 
+            <Stack spacing={1}>
+              <Text>{product.title}</Text>
+              <Text fontSize="sm" fontWeight="500" color="green.500">{parseCurrency(product.price)}</Text>
+            </Stack>
+            <Button
               colorScheme="primary" 
+              variant="outline"
               onClick={()=> handleAddToCart(product)}
             >
               Add
@@ -51,14 +54,20 @@ export const indexRoute: React.FC<Props> = ({products}) => {
         )}
       </Grid>
       {Boolean(cart.length) && 
-          <Button 
-            as={Link}
-            href={`https://wa.me/5492215690717?text=${encodeURIComponent(checkoutText)}`}
-            isExternal
-            colorScheme="whatsapp"
-          >
-            Realizar pedido ({cart.length} productos)
-          </Button>
+          <Flex
+            bottom={4}
+            position="sticky"
+            alignItems="center"
+            justifyContent="center">
+            <Button 
+              padding={4}
+              as={Link}
+              href={`https://wa.me/5492215690717?text=${encodeURIComponent(checkoutText)}`}
+              isExternal
+              colorScheme="whatsapp">
+              Realizar pedido ({cart.length} productos)
+            </Button>
+          </Flex>
       }
     </Stack>
   )
@@ -67,6 +76,7 @@ export const indexRoute: React.FC<Props> = ({products}) => {
 export const getStaticProps: GetStaticProps = async () =>{
   const products = await api.list();
   return {
+    revalidate:10,
     props: {
       products
     },
