@@ -1,0 +1,49 @@
+{
+ "root": true,
+ "extends": [
+ "standard",
+ "prettier",
+ "prettier/react",
+ "eslint:recommended",
+ "plugin:react/recommended",
+ "plugin:flowtype/recommended",
+ "plugin:cypress/recommended"
+ ],
+ "plugins": [
+ "react",
+ "cypress",
+ "prettier",
+ "flowtype"
+ ],
+ "parser": "babel-eslint",
+ "parserOptions": {
+ "ecmaVersion": 2016,
+ "sourceType": "module",
+ "ecmaFeatures": {
+ "jsx": true
+ }
+ },
+ "env": {
+ "browser": true,
+ "commonjs": true,
+ "node": true,
+ "es6": true,
+ "jest": true,
+ "mocha": true,
+ "cypress/globals": true
+ },
+ "settings": {
+ "flowtype": {
+ "onlyFilesWithFlowAnnotation": true
+ }
+ },
+ "rules": {
+ "no-console": 1,
+ "prettier/prettier": [
+ "error",
+ {
+ "semi": false
+ }
+ ]
+ }
+}
