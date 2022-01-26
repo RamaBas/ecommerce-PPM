@@ -18,7 +18,6 @@ export default {
                         header: true,
                         complete: (results) =>{
                             const products = results.data as Product[]
-                            
                             return resolve(products.map(product => ({
                                 ...product,
                                 price: Number(product.price)
@@ -29,4 +28,8 @@ export default {
                 }),
         );
     },
+
+    mock: {
+        list: (mock: string) => import(`./mocks/${mock}.json`).then(result => result.default)
+    }
 };

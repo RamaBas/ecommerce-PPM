@@ -1,0 +1,58 @@
+[
+    {
+        "id": "1",
+        "title": "Rueda",
+        "category": "Auto",
+        "description": "Rueda de auto",
+        "image": "https://www.autofacil.es/wp-content/uploads/2016/08/rueda.jpg",
+        "price": 200
+    },
+    {
+        "id": "2",
+        "title": "Motor FIAT Palio",
+        "category": "Auto",
+        "description": "Motor 4 cilindros para auto",
+        "image": "https://fotos.perfil.com/2011/11/01/palio-attractive-motor-14.jpg",
+        "price": 1930
+    },
+    {
+        "id": "3",
+        "title": "Disco de freno",
+        "category": "Moto",
+        "description": "Disco de freno yamaha",
+        "image": "http://d2r9epyceweg5n.cloudfront.net/stores/001/176/750/products/fz1-1cf049a29b5fc1cdc415894702523638-640-0.jpeg",
+        "price": 485
+    },
+    {
+        "id": "4",
+        "title": "Amortiguador",
+        "category": "Moto",
+        "description": "Amortiguador Motomel",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_984660-MLA42486462324_072020-O.jpg",
+        "price": 300
+    },
+    {
+        "id": "5",
+        "title": "Espejo",
+        "category": "Bicicleta",
+        "description": "Espejo bicicleta recto",
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSu_c9EXumJFSsOTAMZGDSy5sJPqRCX896dBA&usqp=CAU",
+        "price": 120
+    },
+    {
+        "id": "6",
+        "title": "Arbol de leva",
+        "category": "Auto",
+        "description": "Arbol de leva",
+        "image": "https://storage.googleapis.com/blog-prod-files/uploads/sites/11/2020/11/arbol-de-levas-680x350.jpg",
+        "price": 5390
+    },
+    {
+        "id": "7",
+        "title": "tuerca",
+        "category": "Bicicleta",
+        "description": "Tuerca 4\"",
+        "image": "https://www.maferbul.com.ar/dist/assets/images/subcategories/168/carousel/maferbul-tuercas-hexagonal-pulgada-zincada.jpg",
+        "price": 10
+    }
+]
